@@ -10,6 +10,7 @@ Calendar notifications for desktops running the dunst notification daemon.
 
 - [dunst notification daemon](https://github.com/dunst-project/dunst)
 - [i3blocks](https://github.com/vivien/i3blocks)
+- [cal](https://en.m.wikipedia.org/wiki/Cal_(command))
 - [bc](https://www.gnu.org/software/bc/manual/html_mono/bc.html)
 
 ## i3blocks
