@@ -16,26 +16,21 @@ scroll_action() {
 	fi
 }
 
+TMP="/tmp/calendar_notification_month"
+touch "$TMP"
+
 TODAY=$(date '+%d')
-TMPD="/tmp/i3blocks"
-TMPM="/tmp/i3blocks/month"
-
-if ! [ -d "$TMPD" ]; then
-	mkdir "$TMPD" -p
-	touch "$TMPM"
-fi
-
-DIFF=$(cat "$TMPM")
+DIFF=$(cat "$TMP")
 
 case $BLOCK_BUTTON in
-  1) # click
-		echo 0 > "$TMPM"; send_notification -1
+	1) # click
+		echo 0 > "$TMP"; send_notification -1
 	;;
 	4) # scroll up
-		echo $((DIFF+1)) > "$TMPM"; scroll_action
+		echo $((DIFF+1)) > "$TMP"; scroll_action
 	;;
 	5) # scroll down
-		echo $((DIFF-1)) > "$TMPM"; scroll_action
+		echo $((DIFF-1)) > "$TMP"; scroll_action
 	;;
 esac
 
