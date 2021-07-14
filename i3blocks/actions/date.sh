@@ -8,7 +8,7 @@ send_notification() {
 }
 
 scroll_action() {
-	if (( DIFF > 0 )); then
+	if [ "$DIFF" -ge 0 ]; then
 		send_notification "+$DIFF month"
 	else
 		DIFF=$(echo "$DIFF*-1" | bc);
