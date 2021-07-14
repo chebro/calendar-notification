@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/chebro/calendar-notification/master/assets/demo.gif" alt="demo" align="right" width="400px">
-
 # Calendar Notification
+
+<img src="https://raw.githubusercontent.com/chebro/calendar-notification/master/assets/demo.gif" alt="demo" align="right" width="300px">
 
 > _currently only supports i3blocks_
 
