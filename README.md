@@ -8,7 +8,7 @@ Calendar notifications for desktops running the dunst notification daemon.
 
 ## Dependencies
 
-- [dunst notification daemon](https://github.com/dunst-project/dunst) notification daemon
+- [dunst notification daemon](https://github.com/dunst-project/dunst)
 - [i3blocks](https://github.com/vivien/i3blocks)
 - [bc](https://www.gnu.org/software/bc/manual/html_mono/bc.html)
 
