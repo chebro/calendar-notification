@@ -1,10 +1,12 @@
 #! /bin/bash
 
 send_notification() {
+	TODAY=$(date '+%d')
+	HEAD=$(cal "$1" | head -n1)
+	BODY=$(cal "$1" | tail -n7 | sed "s|$TODAY|<u><b>$TODAY</b></u>|g")
+	FOOT="\n<i>       ~ calendar</i> 󰸗 "
 	dunstify -h string:x-canonical-private-synchronous:calendar \
-		"$(cal "$1" | head -n1)" \
-		"$(cal "$1" | tail -n7 | sed "s|$TODAY|<u><b>$TODAY</b></u>|g")\n<i>       ~ calendar</i> 󰸗 " \
-		-u NORMAL
+		"$HEAD" "$BODY$FOOT" -u NORMAL
 }
 
 scroll_action() {
@@ -19,7 +21,6 @@ scroll_action() {
 TMP="/tmp/calendar_notification_month"
 touch "$TMP"
 
-TODAY=$(date '+%d')
 DIFF=$(cat "$TMP")
 
 case $BLOCK_BUTTON in
