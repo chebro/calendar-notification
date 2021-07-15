@@ -1,6 +1,6 @@
 # Calendar Notification
 
-<img src="https://raw.githubusercontent.com/chebro/calendar-notification/master/assets/demo.gif" alt="demo" align="right" width="300px">
+<img src="https://raw.githubusercontent.com/chebro/calendar-notification/master/assets/demo.gif" alt="demo" align="right">
 
 > _currently only supports i3blocks_
 
@@ -17,9 +17,12 @@ Calendar notifications for desktops running the dunst notification daemon.
 
 The action script at `i3blocks/actions/date.sh` is responsible for handling events, the script accepts the following arguments:
 
-- curr - current month
-- next - increment month
-- prev - decrement month
+```sh
+ACTION="./i3blocks/actions/date.sh"
+$ACTION curr # current month
+$ACTION next # increment month
+$ACTION prev # decrement month
+```
 
 ## i3blocks
 
