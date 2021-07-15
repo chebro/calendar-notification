@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ACTION="$HOME/.config/i3blocks/scripts/actions/date.sh"
+ACTION="$HOME/.config/i3blocks/actions/date.sh"
 
 # handle button actions
 case $BLOCK_BUTTON in
