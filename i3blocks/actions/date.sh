@@ -21,7 +21,7 @@ handle_action() {
 TMP="/tmp/calendar_notification_month"
 touch "$TMP"
 
-DIFF=$(cat "$TMP")
+DIFF=$(<$TMP)
 
 case $1 in
 	"curr") DIFF=0;;
