@@ -25,9 +25,9 @@ touch "$TMP"
 DIFF=$(cat "$TMP")
 
 case $1 in
-	"click") DIFF=0;;
-	"scrup") DIFF=$((DIFF+1));;
-	"scrdn") DIFF=$((DIFF-1));;
+	"curr") DIFF=0;;
+	"next") DIFF=$((DIFF+1));;
+	"prev") DIFF=$((DIFF-1));;
 esac
 
 handle_action

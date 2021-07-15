@@ -4,12 +4,18 @@ ACTION="$HOME/.config/i3blocks/scripts/actions/date.sh"
 
 # handle button actions
 case $BLOCK_BUTTON in
-	1) $ACTION click;;
-	4) $ACTION scrup;;
-	5) $ACTION scrdn;;
+	1) # click
+		$ACTION curr
+	;;
+	4) # scroll up
+		$ACTION next
+	;;
+	5) #scroll down
+		$ACTION prev
+	;;
 esac
 
 # i3block
 DATE=$(date '+%b %d')
-LCAL=" 󰸘 "
-echo "$LCAL$DATE "
+CALI=" 󰸘 "
+echo "$CALI$DATE "
