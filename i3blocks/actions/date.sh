@@ -9,7 +9,8 @@ send_notification() {
 		"$HEAD" "$BODY$FOOT" -u NORMAL
 }
 
-scroll_action() {
+handle_action() {
+	echo "$DIFF" > "$TMP"
 	if [ "$DIFF" -ge 0 ]; then
 		send_notification "+$DIFF month"
 	else
@@ -23,15 +24,10 @@ touch "$TMP"
 
 DIFF=$(cat "$TMP")
 
-case $BLOCK_BUTTON in
-	1) # click
-		echo 0 > "$TMP"; send_notification -1
-	;;
-	4) # scroll up
-		echo $((DIFF+1)) > "$TMP"; scroll_action
-	;;
-	5) # scroll down
-		echo $((DIFF-1)) > "$TMP"; scroll_action
-	;;
+case $1 in
+	"click") DIFF=0;;
+	"scrup") DIFF=$((DIFF+1));;
+	"scrdn") DIFF=$((DIFF-1));;
 esac
 
+handle_action
