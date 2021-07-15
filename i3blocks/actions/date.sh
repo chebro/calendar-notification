@@ -12,10 +12,9 @@ send_notification() {
 handle_action() {
 	echo "$DIFF" > "$TMP"
 	if [ "$DIFF" -ge 0 ]; then
-		send_notification "+$DIFF month"
+		send_notification "+$DIFF months"
 	else
-		DIFF=$(echo "$DIFF*-1" | bc);
-		send_notification "$DIFF month ago"
+		send_notification "$((-DIFF)) months ago"
 	fi
 }
 
