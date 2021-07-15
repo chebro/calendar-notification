@@ -13,6 +13,14 @@ Calendar notifications for desktops running the dunst notification daemon.
 - [cal](https://en.m.wikipedia.org/wiki/Cal_(command))
 - [bc](https://www.gnu.org/software/bc/manual/html_mono/bc.html)
 
+## Actions
+
+The action script at `i3blocks/actions/date.sh` is responsible for handling events, the script accepts the following arguments:
+
+- curr - current month
+- next - increment month
+- prev - decrement month
+
 ## i3blocks
 
 Create a date block in `~/.config/i3blocks/config`
@@ -23,10 +31,5 @@ command=~/.config/i3blocks/scripts/date.sh
 interval=60
 ```
 
-Copy the contents of `./i3blocks` to your `$HOME/.config/i3blocks/`
+Copy the contents of `i3blocks` to your `$HOME/.config/i3blocks/`
 
-## Actions
-
-- click     : current month
-- scroll-up : increment month
-- scroll-dn : decrement month
