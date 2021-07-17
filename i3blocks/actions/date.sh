@@ -18,10 +18,10 @@ handle_action() {
 	fi
 }
 
-TMP="/tmp/calendar_notification_month"
+TMP=${XDG_RUNTIME_DIR:-/tmp}/"$UID"_calendar_notification_month
 touch "$TMP"
 
-DIFF=$(<$TMP)
+DIFF=$(<"$TMP")
 
 case $1 in
 	"curr") DIFF=0;;
