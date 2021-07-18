@@ -35,7 +35,7 @@ interval = 60
 Copy the contents of `i3blocks` to `$HOME/.config/i3blocks` (to tweak the mouse actions see `i3blocks/scripts/date.sh`):
 
 ```bash
-cp -rL i3blocks/* ~/.config/i3blocks # -L to dereference the symlink
+cp -rL i3blocks ~/.config # -L to dereference the symlink
 ```
 
 ## polybar
