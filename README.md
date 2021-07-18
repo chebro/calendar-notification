@@ -14,30 +14,33 @@ Calendar notifications for desktops running the dunst notification daemon.
 
 ## Actions
 
-The action script at `i3blocks/actions/date.sh` is responsible for handling events, the script accepts the following arguments:
+The `calendar` script is responsible for handling mouse events triggered by your bar, following are valid arguments:
 
 ```sh
-ACTION="./i3blocks/actions/date.sh"
-$ACTION curr # current month
-$ACTION next # increment month
-$ACTION prev # decrement month
+./calendar curr # current month
+./calendar next # increment month
+./calendar prev # decrement month
 ```
 
 ## i3blocks
 
-Create a date block in `~/.config/i3blocks/config`
+Create a date block in your `$HOME/.config/i3blocks/config`:
 
 ```ini
 [date]
-command=~/.config/i3blocks/scripts/date.sh
-interval=60
+command = ~/.config/i3blocks/scripts/date.sh
+interval = 60
 ```
 
-Copy the contents of `i3blocks` to your `$HOME/.config/i3blocks/`
+Copy the contents of `i3blocks` to `$HOME/.config/i3blocks` (to tweak the mouse actions see `i3blocks/scripts/date.sh`):
+
+```bash
+cp -rL i3blocks/* ~/.config/i3blocks # -L to dereference the symlink
+```
 
 ## polybar
 
-Copy `i3blocks/actions/date.sh` to your polybar config directory. Then, in your polybar config, you can use `click-left`, `scroll-up` and `scroll-down` actions to invoke the script. For example:
+Copy `calendar` to your polybar config directory. Then, in your polybar config, you can use `click-left`, `scroll-up` and `scroll-down` actions to invoke the script. For example:
 
 ```ini
 ; add `calendar` to your modules list
@@ -45,7 +48,7 @@ Copy `i3blocks/actions/date.sh` to your polybar config directory. Then, in your 
 type = custom/script
 label = "󰃭"
 exec = echo Calendar
-click-left = ./date.sh curr
-scroll-up = ./date.sh next
-scroll-down = ./date.sh prev
+click-left = ./calendar curr
+scroll-up = ./calendar next
+scroll-down = ./calendar prev
 ```
