@@ -9,7 +9,7 @@ Calendar notifications for desktops running the dunst notification daemon.
 ## Dependencies
 
 - [dunst notification daemon](https://github.com/dunst-project/dunst)
-- [i3blocks](https://github.com/vivien/i3blocks) (or) [polybar](https://github.com/polybar/polybar)
+- [i3blocks](https://github.com/vivien/i3blocks) or [polybar](https://github.com/polybar/polybar)
 - [cal](<https://en.m.wikipedia.org/wiki/Cal_(command)>)
 
 ## Actions
@@ -24,7 +24,7 @@ The `calendar` script is responsible for handling mouse events triggered by your
 
 ## i3blocks
 
-Create a date block in your `$HOME/.config/i3blocks/config`:
+Create a date block:
 
 ```ini
 [date]
